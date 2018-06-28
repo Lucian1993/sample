@@ -35,7 +35,7 @@ class SessionsController extends Controller
     		'password' => $request->password,
     	];
 
-    	if (Auth::attempt($credentials， $request->has('remember'))) {
+    	if (Auth::attempt($credentials, $request->has('remember'))) {
     		//登录成功后的操作
             if(Auth::user()->activated) {
                 session()->flash('success', 'welcome back!');
